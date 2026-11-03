@@ -1,0 +1,45 @@
+# scope.txt · programa: Kiwi.com (https://hackerone.com/kiwicom) · consultado: 2026-10-29
+# Linea normal = en alcance · linea con "!" = fuera de alcance · las exclusiones prevalecen sobre las inclusiones
+
+# --- En alcance: dominios ---
+www.kiwi.com
+jobs.kiwi.com
+tequila.kiwi.com
+# (las dos siguientes proceden de la descripcion de tequila.kiwi.com)
+tequila-api.kiwi.com
+api.tequila.kiwi.com
+auth.skypicker.com
+*.kiwi.com
+*.skypicker.com
+# raiz: no listado en el programa; solo consultas pasivas a registros publicos (whois, DNS)
+kiwi.com
+# www.kiwi.com/stories esta en alcance (ruta, ya cubierta por www.kiwi.com)
+
+# --- En alcance pero no son objetivos de red (apps moviles) ---
+# com.skypicker.main (Android)
+# com.skypicker.Skypicker (iOS)
+
+# --- Fuera de alcance: terceros ---
+!*cars.kiwi.com
+!status.kiwi.com
+!*code.kiwi.com
+!*parking.kiwi.com
+!rooms.kiwi.com
+!retool.skypicker.com
+!*learn.kiwi.com
+!vacation.kiwi.com
+!*ov.kiwi.com
+!*sg.kiwi.com
+!*._domainkey.kiwi.com
+!outbound.intercom.kiwi.com
+!email*skypicker.com
+!email*kiwi.com
+!*_domainkey.skypicker.com
+!mail.skypicker.com
+!packages.kiwi.com
+!nyrujhhu3yuk.nest.skypicker.com
+!*citi-sign.kiwi.com
+!*.coupons.kiwi.com
+!*experiences.kiwi.com
+!kiwistore.kiwi.com
+!link.kiwi.com
