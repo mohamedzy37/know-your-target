@@ -73,7 +73,9 @@ Otras reglas relevantes:
 
 ## 4. Fichero `scope.txt`
 
-Cada línea es un objetivo. Una línea normal está en alcance y una línea con `!` está fuera de alcance. Las exclusiones (`!`) prevalecen sobre las inclusiones. Los comentarios empiezan por `#`. La ruta `www.kiwi.com/stories` y las dos apps móviles no son hosts, así que van como comentario en `scope.txt` y siguen apareciendo en la sección 1. El fichero completo está en `scope.txt`:
+Cada línea es un objetivo. Una línea normal está en alcance y una línea con `!` está fuera de alcance. Las exclusiones (`!`) prevalecen sobre las inclusiones. Los comentarios empiezan por `#`. La ruta `www.kiwi.com/stories` y las dos apps móviles no son hosts, así que van como comentario en `scope.txt` y siguen apareciendo en la sección 1.
+
+El scope-guard del agente (Parte 2) solo reconoce los comodines de la forma `*.dominio`. Por eso, las exclusiones del programa con `*` en otra posición (`*cars.kiwi.com`, `email*kiwi.com`…) se escriben como nombre exacto + `*.nombre`, con la regla original como comentario. Las 23 exclusiones del programa quedan en 34 líneas `!` (ver `agente/pruebas.md`, sección 1.2). El fichero completo está en `scope.txt`:
 
 ```
 # scope.txt · programa: Kiwi.com (https://hackerone.com/kiwicom) · consultado: 2026-10-29
@@ -98,27 +100,51 @@ kiwi.com
 # com.skypicker.Skypicker (iOS)
 
 # --- Fuera de alcance: terceros ---
-!*cars.kiwi.com
+# El scope-guard solo entiende "*." al principio. Las reglas del programa con "*"
+# en otra posicion se traducen a: nombre exacto + "*.nombre" (regla original en comentario).
+# *cars.kiwi.com
+!cars.kiwi.com
+!*.cars.kiwi.com
 !status.kiwi.com
-!*code.kiwi.com
-!*parking.kiwi.com
+# *code.kiwi.com
+!code.kiwi.com
+!*.code.kiwi.com
+# *parking.kiwi.com
+!parking.kiwi.com
+!*.parking.kiwi.com
 !rooms.kiwi.com
 !retool.skypicker.com
-!*learn.kiwi.com
+# *learn.kiwi.com
+!learn.kiwi.com
+!*.learn.kiwi.com
 !vacation.kiwi.com
-!*ov.kiwi.com
-!*sg.kiwi.com
+# *ov.kiwi.com
+!ov.kiwi.com
+!*.ov.kiwi.com
+# *sg.kiwi.com
+!sg.kiwi.com
+!*.sg.kiwi.com
 !*._domainkey.kiwi.com
 !outbound.intercom.kiwi.com
-!email*skypicker.com
-!email*kiwi.com
-!*_domainkey.skypicker.com
+# email*skypicker.com
+!email.skypicker.com
+!*.email.skypicker.com
+# email*kiwi.com
+!email.kiwi.com
+!*.email.kiwi.com
+# *_domainkey.skypicker.com
+!_domainkey.skypicker.com
+!*._domainkey.skypicker.com
 !mail.skypicker.com
 !packages.kiwi.com
 !nyrujhhu3yuk.nest.skypicker.com
-!*citi-sign.kiwi.com
+# *citi-sign.kiwi.com
+!citi-sign.kiwi.com
+!*.citi-sign.kiwi.com
 !*.coupons.kiwi.com
-!*experiences.kiwi.com
+# *experiences.kiwi.com
+!experiences.kiwi.com
+!*.experiences.kiwi.com
 !kiwistore.kiwi.com
 !link.kiwi.com
 ```

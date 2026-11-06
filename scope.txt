@@ -20,26 +20,50 @@ kiwi.com
 # com.skypicker.Skypicker (iOS)
 
 # --- Fuera de alcance: terceros ---
-!*cars.kiwi.com
+# El scope-guard solo entiende "*." al principio. Las reglas del programa con "*"
+# en otra posicion se traducen a: nombre exacto + "*.nombre" (regla original en comentario).
+# *cars.kiwi.com
+!cars.kiwi.com
+!*.cars.kiwi.com
 !status.kiwi.com
-!*code.kiwi.com
-!*parking.kiwi.com
+# *code.kiwi.com
+!code.kiwi.com
+!*.code.kiwi.com
+# *parking.kiwi.com
+!parking.kiwi.com
+!*.parking.kiwi.com
 !rooms.kiwi.com
 !retool.skypicker.com
-!*learn.kiwi.com
+# *learn.kiwi.com
+!learn.kiwi.com
+!*.learn.kiwi.com
 !vacation.kiwi.com
-!*ov.kiwi.com
-!*sg.kiwi.com
+# *ov.kiwi.com
+!ov.kiwi.com
+!*.ov.kiwi.com
+# *sg.kiwi.com
+!sg.kiwi.com
+!*.sg.kiwi.com
 !*._domainkey.kiwi.com
 !outbound.intercom.kiwi.com
-!email*skypicker.com
-!email*kiwi.com
-!*_domainkey.skypicker.com
+# email*skypicker.com
+!email.skypicker.com
+!*.email.skypicker.com
+# email*kiwi.com
+!email.kiwi.com
+!*.email.kiwi.com
+# *_domainkey.skypicker.com
+!_domainkey.skypicker.com
+!*._domainkey.skypicker.com
 !mail.skypicker.com
 !packages.kiwi.com
 !nyrujhhu3yuk.nest.skypicker.com
-!*citi-sign.kiwi.com
+# *citi-sign.kiwi.com
+!citi-sign.kiwi.com
+!*.citi-sign.kiwi.com
 !*.coupons.kiwi.com
-!*experiences.kiwi.com
+# *experiences.kiwi.com
+!experiences.kiwi.com
+!*.experiences.kiwi.com
 !kiwistore.kiwi.com
 !link.kiwi.com
