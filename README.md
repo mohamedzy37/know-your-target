@@ -17,3 +17,7 @@
 - [agente/traza.jsonl](agente/traza.jsonl): ejecución completa contra el objetivo
 - [agente/traza.log](agente/traza.log): versión legible de la traza
 - [agente/informe.md](agente/informe.md): informe que generó el agente
+
+## Parte 3 · Análisis comparativo
+
+- [comparativa.md](comparativa.md): mi reconocimiento frente al del agente, fallos clasificados y reflexión
